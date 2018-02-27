@@ -7,7 +7,7 @@ var friends = [
     {
         name: 'Bilbo',
         image: 'http://www.mintconditioncustom.com/wp-content/uploads/2012/12/BILBObagginsNECA01.jpg',
-        scores: [1,2,4,5,3,2,1,3,1,5,4]
+        scores: [5,4,3,1,2,2,1,2,5,1,3]
     }
 
 ]

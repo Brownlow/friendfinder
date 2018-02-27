@@ -3,24 +3,24 @@ var friends = require('../data/friends');
 module.exports = function(app){
     app.post('/api/friends', function(req, res){
 
-        friends.push(req.body)
+      // Add new friend to friends array
+      
 
-        for(i=0; i<friends.scores.length; i++){
-            console.log('hey')
+      var scoreDiff = [];
+
+      for (i=0; i<friends.length; i++){
+        console.log(friends[i].scores)
+        for (j=0; j<friends[i].scores.length; j++){
+          var diff = friends[i].scores[j] - parseInt(req.body.scores[j]);
+
+          scoreDiff.push(diff)
+          
         }
+      }
+      console.log(scoreDiff)
+      console.log(req.body)
 
-    //    for(i=0; i<friends.length; i++){
-         
-    //      console.log('-------------------------')
-    //      console.log(diff)
-    //      for (j=0; j<friends[i].scores.length; j++){
-    //         //scoreDiff = parseInt(req.body.scores) - parseInt(friends[i].scores[j]);
-    //         var friendScores = (friends[i].scores[j]);
-    //         diff.push(friendScores)
-    //      }
-    //    }
-
-       
+      friends.push(req.body)
        // bestMatch = ??
        // res.json(bestMatch)
         res.json(req.body)
