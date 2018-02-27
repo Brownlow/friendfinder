@@ -10,6 +10,7 @@ module.exports = function(app){
 
       for (i=0; i<friends.length; i++){
         console.log(friends[i].scores)
+        
         for (j=0; j<friends[i].scores.length; j++){
           var diff = friends[i].scores[j] - parseInt(req.body.scores[j]);
 
@@ -17,8 +18,10 @@ module.exports = function(app){
           
         }
       }
+      console.log('=====================');
       console.log(scoreDiff)
-      console.log(req.body)
+      console.log('=====================');
+      console.log(req.body.scores);
 
       friends.push(req.body)
        // bestMatch = ??
