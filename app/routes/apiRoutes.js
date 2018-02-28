@@ -5,8 +5,7 @@ module.exports = function(app){
 
       app.post("/api/friends", function(req, res) {
     
-        // We will use this object to hold the "best match". We will constantly update it as we
-        // loop through all of the options
+        // Use this object to hold the "best match". Update as I loop through all of the options
         var bestMatch = {
           name: "",
           photo: "",
@@ -21,7 +20,7 @@ module.exports = function(app){
         // each user in the database
         var totalDifference = 0;
     
-        // Here we loop through all the friend possibilities in the database.
+        // Loop through all the friend possibilities in the database.
         for (var i = 0; i < friends.length; i++) {
           totalDifference = 0;
 
